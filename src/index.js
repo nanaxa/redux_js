@@ -1,25 +1,33 @@
+import './style.css';
+import {createStore} from "./createStore";
+import {rootReducer} from "./redux/rootReducer";
+
 let counter = document.querySelector(".counter");
 let subBtn = document.querySelector(".sub");
 let addBtn = document.querySelector(".add");
 let asyncBtn = document.querySelector(".async");
 
-let state = 0;
 
-const render = () => {
-    counter.textContent = state.toString();
-}
+const store = createStore(rootReducer, 0);
 
-function handleSub() {
-    state--;
-    render();
+addBtn.addEventListener('click', ()=> {
+        store.dispatch({type: 'INCREMENT'})
+    }
+)
 
-}
-
-addBtn.addEventListener('click',() => {
-    state++
-    render();
+subBtn.addEventListener('click',() => {
+    store.dispatch({type: 'DECREMENT'})
 })
 
 
+asyncBtn.addEventListener( 'click', () => {
 
-render();
+    }
+)
+
+store.subscribe(() =>  {
+    let state = store.getState();
+    counter.textContent = state;
+})
+
+store.dispatch({type:'__INIT__'});
