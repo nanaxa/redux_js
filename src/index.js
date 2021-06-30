@@ -1,5 +1,5 @@
 import './style.css';
-import {createStore} from "./createStore";
+import {createStore} from "redux";
 import {rootReducer} from "./redux/rootReducer";
 
 let counter = document.querySelector(".counter");
