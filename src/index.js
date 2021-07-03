@@ -36,6 +36,7 @@ store.subscribe(() =>  {
     let state = store.getState();
     counter.textContent = state;
 })
+// comment
 
 
 store.dispatch( init() );
