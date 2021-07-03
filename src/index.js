@@ -7,6 +7,7 @@ let counter = document.querySelector(".counter");
 let subBtn = document.querySelector(".sub");
 let addBtn = document.querySelector(".add");
 let asyncBtn = document.querySelector(".async");
+let themeButton = document.querySelector(".theme_change_btn");
 
 
 const store = createStore(rootReducer, 0);
@@ -25,6 +26,11 @@ asyncBtn.addEventListener( 'click', () => {
 
     }
 )
+
+themeButton.addEventListener('click',() => {
+    document.body.classList.toggle('dark');
+
+})
 
 store.subscribe(() =>  {
     let state = store.getState();
