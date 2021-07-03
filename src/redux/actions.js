@@ -1,4 +1,4 @@
-import {DECREMENT, INCREMENT} from "./types";
+import {DECREMENT, INCREMENT, INIT} from "./types";
 
 export function increment() {
     return {
@@ -9,5 +9,10 @@ export function increment() {
 export function decrement() {
     return {
         type: DECREMENT
+    }
+}
+export function init() {
+    return {
+        type: INIT
     }
 }

@@ -1,7 +1,7 @@
 import './style.css';
 import {createStore} from "redux";
 import {rootReducer} from "./redux/rootReducer";
-import {decrement, increment} from "./redux/actions";
+import {decrement, increment, init} from "./redux/actions";
 
 let counter = document.querySelector(".counter");
 let subBtn = document.querySelector(".sub");
@@ -37,4 +37,4 @@ store.subscribe(() =>  {
     counter.textContent = state;
 })
 
-store.dispatch({type:'__INIT__'});
+store.dispatch( init() );
